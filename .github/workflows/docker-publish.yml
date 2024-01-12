@@ -15,7 +15,7 @@ env:
   AWS_REGION: ap-northeast-2
   REPOSITORY: calculator
   REPOSITORY_URI: ${{ secrets.ECR_URI }}
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: calculator
 
 jobs:
   build:
@@ -54,7 +54,7 @@ jobs:
         with:
           images: ${{ env.REPOSITORY_URI }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=sha,prefix=sha-,format=long
+            type=sha,format=long
 
       - name: Build and push Docker image
         id: build-and-push
