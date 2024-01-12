@@ -12,6 +12,7 @@ RUN gradle build -x test --no-daemon
 
 RUN ls -al
 
+# test
 # Package stage
 FROM amazoncorretto:17
 WORKDIR /app
